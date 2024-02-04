@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Mountain Man Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/passwordMessage.css">
+    <script src="js/registration.js"></script>
+</head>
+<body>
+    <div class="w3-blue-gray">
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+        <img class="w3-image" src="/images/bannerpic.jpg" alt="Mountain" width="1500" height="600">
+        <div class="w3-display-middle w3-padding-large w3-wide w3-text-deep-orange w3-center">
+            <h1 class="w3-hide-medium w3-hide-small w3-jumbo"><strong>Mountain Man</strong></h1>
+            <h5 class="w3-hide-large" style="white-space:nowrap">Mountain Man</h5>
+            <h3 class="w3-hide-medium w3-hide-small w3-xxlarge" ><b>PHOTOGRAPHY</b></h3>
+        </div>
+
+        <!-- Navbar (placed at the bottom of the header image) -->
+        <div class="w3-bar w3-deep-orange w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
+          <a href="homePage.html" class="w3-bar-item w3-button">Home</a>
+          <a href="#registration" class="w3-bar-item w3-button">Registration</a>
+          <a href="animation.html" class="w3-bar-item w3-button">Animation</a>
+        </div>
+      </header>
+
+      <!-- Navbar on small screens -->
+      <div class="w3-center w3-deep-orange w3-padding-16 w3-hide-large w3-hide-medium">
+        <div class="w3-bar w3-deep-orange">
+          <a href="homePage.html" class="w3-bar-item w3-button">Home</a>
+          <a href="#registration" class="w3-bar-item w3-button">Registration</a>
+          <a href="animation.html" class="w3-bar-item w3-button">Animation</a>
+        </div>
+      </div>
+
+
+      <!-- Registration -->
+      <div class="w3-content w3-light-gray w3-padding-large w3-margin-top w3-border w3-border-deep-orange" id="registration">
+          <h3 class="w3-center w3-text-deep-orange"><strong>Registration</strong></h3>
+            <h5>For any information about booking availability or use of any photos here on Mountain Man Photography.
+                Please fill out a form, and we will respond as soon as possible.</h5>
+
+          <!-- UserName -->
+        <form name="registrationForm" action="registration.html" method="POST" id="registrationForm">
+            <div class="w3-section">
+                <label for="userName"><strong>User Name:</strong></label><br/>
+                <input class="w3-input w3-border w3-border-black" id="userName" type="text"
+                       required size="50" maxlength="50" minlength="6" name="userName" placeholder="jsmith123"/>
+            </div>
+            <span id="userNameError" class="error"></span>
+
+            <!-- Password -->
+            <div class="w3-section">
+                <label for="password"><strong>Password:</strong></label><br/>
+                <input class="w3-input w3-border w3-border-black" id="password" type="password"
+                       required size="50" maxlength="50" minlength="8" name="password"
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,50}$"/>
+
+            </div>
+                <!-- Messages for password validation -->
+                <div id="passwordMessage" class="w3-center">
+                    <h3>Password must contain the following:</h3>
+                    <p id="lowercase" class="invalid">A lowercase letter</p>
+                    <p id="capital" class="invalid">A capital letter</p>
+                    <p id="number" class="invalid">A digit</p>
+                    <p id="special" class="invalid">A special character (!, @, #, $, %, ^)</p>
+                    <p id="length" class="invalid">Must be 8 or more and less than 50 characters </p>
+                </div>
+
+                <script src="js/passwordValidator.js"></script>
+
+            <!-- Repeat Password -->
+            <div class="w3-section">
+                <label for="passwordVerification"><strong>Password Verification:</strong><h6 class="w3-right">(Please input password again)</h6></label>
+              <input class="w3-input w3-border w3-border-black" id="passwordVerification" type="password"
+                     size="50" maxlength="50" minlength="8" name="passwordVerification" required
+                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,50}$"/>
+            </div>
+                <div id="passwordMessage2" class="w3-center">
+                    <h3>Password must contain the following:</h3>
+                    <p id="lowercase2" class="invalid">A lowercase letter</p>
+                    <p id="capital2" class="invalid">A capital letter</p>
+                    <p id="number2" class="invalid">A digit</p>
+                    <p id="special2" class="invalid">A special character (!, @, #, $, %, ^)</p>
+                    <p id="length2" class="invalid">Must be 8 or more and less than 50 characters </p>
+                    <p id="equal" class="invalid">Passwords must be matching</p>
+                </div>
+                    <script src="js/passwordValidator.js"></script>
+                    <span id="matchingError" class="error"></span>
+
+            <!-- First Name -->
+            <div class="w3-section">
+              <label for="firstName"><strong>First Name:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="firstName" type="text"
+                     required size="50" maxlength="50" name="firstName" placeholder="John"/>
+            </div>
+                <span id="firstNameError" class="error"></span>
+
+            <!-- Last Name -->
+            <div class="w3-section">
+              <label for="lastName"><strong>Last Name:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="lastName" type="text"
+                     required size="50" maxlength="50" name="lastName" placeholder="Smith"/>
+            </div>
+                <span id="lastNameError" class="error"></span>
+
+            <!-- Address line 1 -->
+            <div class="w3-section">
+              <label for="addressLine1"><strong>Address Line #1:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="addressLine1" type="text"
+                     required size="100" maxlength="100" name="addressLine1" placeholder="123 1st Street"/>
+            </div>
+                <span id="addressLine1Error" class="error"></span>
+
+            <!-- Address line 2 -->
+            <div class="w3-section">
+                <label for="addressLine2"><strong>Address Line #2:</strong><h6 class="w3-right">(Optional)</h6></label><br/>
+              <input class="w3-input w3-border w3-border-black valid"  id="addressLine2" type="text"
+                     size="100" maxlength="100" name="addressLine2"/>
+            </div>
+
+            <!-- City -->
+            <div class="w3-section">
+              <label for="city"><strong>City:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="city" type="text"
+                     required size="50" maxlength="50" name="city" placeholder="OFallon"/>
+            </div>
+                <span id="cityError" class="error"></span>
+
+            <!-- State Drop down box -->
+            <div class="w3-section">
+              <label for="state"><strong>State:</strong></label><br/>
+              <select class="w3-input w3-border w3-border-black" id="state"
+                      required name="state" >
+                  <option hidden value="">Please Select Here</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+            </div>
+                <span id="stateError" class="error"></span>
+
+            <!-- Zip Code -->
+            <div class="w3-section">
+              <label for="zipCode"><strong>Zip Code:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="zipCode" type="text"
+                     required size="10" maxlength="10" minlength="5" name="zipCode" placeholder="63368"/>
+            </div>
+                <span id="zipCodeError" class="error"></span>
+
+            <!-- Phone Number -->
+            <div class="w3-section">
+              <label for="phoneNumber"><strong>Phone Number:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="phoneNumber" type="text"
+                     required size="12" maxlength="12" name="phoneNumber" placeholder="555-555-5555"/>
+            </div>
+                <span id="phoneNumberError" class="error"></span>
+
+            <!-- Email -->
+            <div class="w3-section">
+              <label for="email"><strong>Email:</strong></label><br/>
+              <input class="w3-input w3-border w3-border-black" id="email" type="email"
+                     required name="email" placeholder="jsmith123@email.com"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{1,4}$"/>
+            </div>
+                <span id="emailError" class="error"></span>
+
+            <!-- Gender -->
+            <div class="w3-section" >
+              <label><strong>Gender:</strong></label>
+              <br/>
+                <input type="radio" required
+                         name="gender" id="maleGender"
+                         value="male"/> <label for="maleGender">Male</label><br/>
+                <input type="radio" required
+                         name="gender" id="femaleGender"
+                         value="female"/> <label for="femaleGender">Female</label><br/>
+                <input type="radio" required
+                         name="gender" id="otherGender"
+                         value="other"/> <label for="otherGender">Other</label>
+            </div>
+
+            <!-- Marital Status -->
+            <div class="w3-section">
+                <label><strong>Marital Status</strong></label>
+                <br/>
+                <input type="radio" required
+                     name="maritalStatus" id="married"
+                     value="married"/> <label for="married">Married</label><br/>
+                <input type="radio" required
+                     name="maritalStatus" id="divorced"
+                     value="divorced"/> <label for="divorced">Divorced</label><br/>
+                <input type="radio" required
+                     name="maritalStatus" id="neverMarried"
+                     value="neverMarried"/> <label for="neverMarried">Never Married</label>
+            </div>
+
+            <!-- Date of Birth pop up (date clicker) -->
+            <div class="w3-section">
+                <label for="birthDay"><strong>Date of birth:</strong></label><br/>
+                <input class="w3-border w3-border-black" id="birthDay" type="date" name="birthDay"
+                       required /><br/>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" class=" w3-button w3-deep-orange" id="submit" value="Submit">
+
+            <!-- Reset Button -->
+            <input type="reset" class=" w3-button w3-deep-orange" value="Reset">
+        </form>
+      </div>
+
+        <!-- Back to top of page option -->
+        <div class="w3-right w3-content w3-text-deep-orange">
+            <br/>
+            <a href="#" class="w3-bar-item w3-button w3-light-gray w3-border w3-border-blue"><strong>Back to top</strong></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-display-container w3-content w3-center" style="max-width:1500px">
+        <div class="w3-display-middle w3-wide w3-text-blue w3-bottom-middle">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <a href="https://www.youtube.com/watch?v=g4_p2-TG840">
+                <img src="/images/logo.jpg" alt="Picture of Logo" class="w3-image w3-margin-top" width="75" height="75"/>
+                <br/><strong>Mountain Man Photography Youtube - Click Here</strong>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
